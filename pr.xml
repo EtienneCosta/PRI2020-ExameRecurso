@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+
+    <metadados>
+
+        <keyname> PRI_Exame </keyname>
+
+        <title> Exame de Processamento e Representação de Informação  </title>
+
+        <bdate>8 Fevereiro 2021</bdate>
+
+        <edate>8 Fevereiro 2021</edate>
+
+        <supervisor name="José Carlos Ramalho">
+
+            <email> jcr@di.uminho.pt</email>
+
+            <href link="http://www4.di.uminho.pt/~jcr/"> WebPage </href>
+
+        </supervisor>
+
+    </metadados>
+
+
+    <workteam>
+
+        <person identifier="a76089">
+            <name> Etienne da Silva Filipe Amado da Costa </name>
+
+            <email> a76089@alunos.uminho.pt </email>
+
+        </person>
+
+    </workteam>
+
+
+    <abstract>
+
+        <paragraph> 
+
+        Conjunto de respostas no ficheiro.txt
+
+       </paragraph>
+
+
+        <paragraph> 
+                O primeiro exercício consistia na implementação de uma API de dados,sendo que o mesmo servidor corre na porta 8000. 
+       </paragraph>
+
+
+      <paragraph>
+                O segundo exercício consistia na implementação de uma interface ,sendo que o mesmo servidor corre na porta 8001. 
+      </paragraph>
+
+
+
+
+    
+    </abstract>
+
+
+    <deliverables>
+
+      
+
+    </deliverables>
+
+
+</pr>

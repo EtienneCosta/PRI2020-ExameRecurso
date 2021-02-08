@@ -1,0 +1,34 @@
+Import da base de dados:
+
+mongoimport -d PEI2020 -c teams --jsonArray  PEI-teams.json
+
+----------------------------------------------------------------------------------------------------------------------------------
+Quantas equipes existem na base de dados? (resultado = inteiro)?
+
+Query: db.teams.count() 
+----------------------------------------------------------------------------------------------------------------------------------
+Quais as equipes? (lista com os nomes das equipes ordenada alfabeticamente) 
+
+Query : db.teams.find({},{_id:0,team:1}).sort({team:1})
+----------------------------------------------------------------------------------------------------------------------------------
+Quantos alunos existem catalogados na base de dados?
+Fazer o unwind e contar ...
+
+Query: db.teams.aggregate([ {'$group':{'_id' :null,'Total de alunos':{'$sum':{'$size': '$members'}}}}])
+----------------------------------------------------------------------------------------------------------------------------------
+Quais os alunos? (lista de pares com os números de identificação e nomes dos alunos ordenada alfabeticamente por nome)
+
+Query: db.teams.aggregate([{$unwind:'$members'},{$project:{_id:0,id:'$members.id',name:'$members.name'}},{$sort:{'members.name':1}}])
+----------------------------------------------------------------------------------------------------------------------------------
+Quantos alunos do MIEI existem catalogados na base de dados? (resultado = inteiro)
+
+Query : db.teams.aggregate({$unwind:"$members"},{$match:{"members.course":"MIEI"}},{$group:{_id:null,count:{$sum:1}}})
+
+----------------------------------------------------------------------------------------------------------------------------------
+Quantos membros tem cada equipe? (resultado = lista de pares, nome da equipe e número de elementos na equipe, ordenada alfabeticamente por nome da equipe )
+
+Query: 
+Parecido ... 
+db.compras.aggregate([{$unwind:'$produtos'},{$match:{'produtos.categoria':"Peixe"}},{$group:{_id:'$produtos.categoria',produtos:{$addToSet:'$produtos.designacao'}}}]).pretty()
+
+Avançar para API .. 
