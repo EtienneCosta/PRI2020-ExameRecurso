@@ -1,0 +1,35 @@
+extends layout 
+block content 
+
+    .w3-card-4
+          header.w3-container.w3-teal
+            h3(style='text-align:center;') Registo de Equipe
+    form(action='/registarteam' method='POST')
+      label
+        b TEAM:
+          input(type='text' name='team')
+        br    
+      label
+        b PITCH1:
+            input(type='text' name='pitch1')
+            br
+      label
+        b PITCH2:
+            input(type='text' name='pitch2')
+            br
+      label
+         b TECHPITCH:
+            input(type='text' name='techpitch')
+            br
+      label
+         b BusinessReport:
+            input(type='text' name='businessreport')
+            br
+      
+            
+      input(type='submit' value='Submit')
+      input(type='reset' value='Reset')
+    
+      footer(class="w3-container w3-teal")
+        p
+            a(href="/") HomePage
